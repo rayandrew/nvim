@@ -1,0 +1,7 @@
+pcall(require("rayandrew.configs.ui"))
+pcall(require("rayandrew.configs.git"))
+pcall(require("rayandrew.configs.treesitter"))
+pcall(require("rayandrew.configs.telescope"))
+pcall(require("rayandrew.configs.lsp"))
+pcall(require("rayandrew.configs.null-ls"))
+pcall(require("rayandrew.configs.others"))
