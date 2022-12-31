@@ -76,6 +76,12 @@ null_ls.setup({
     -- formatting.phpcsfixer,
     -- formatting.phpcbf,
     -- formatting.rustywind,
+    formatting.black,
+    formatting.shfmt,
+    formatting.rustfmt,
+    formatting.yamlfmt,
+    formatting.clang_format,
+    formatting.jq,
   },
   -- configure format on save
   on_attach = function(current_client, bufnr)
