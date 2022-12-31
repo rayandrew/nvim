@@ -1,3 +1,23 @@
+-- mason null ls
+local mason_null_ls_status, mason_null_ls = pcall(require, "mason-null-ls")
+
+if mason_null_ls_status then
+  mason_null_ls.setup({
+    automatic_installation = true,
+    ensure_installed = {
+      "stylua",
+      "jq",
+      "prettier",
+      "eslint_d",
+      "yamlfmt",
+      "rustfmt",
+      "black",
+      "clang-format",
+      "shfmt",
+    },
+  })
+end
+
 -- null-ls
 -- to setup format on save
 local null_ls_status, null_ls = pcall(require, "null-ls")

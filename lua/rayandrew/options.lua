@@ -1,6 +1,13 @@
 -- [[ Setting options ]]
 -- See `:help vim.o`
 
+-- Timeoutlen
+vim.opt.timeoutlen = 500
+
+-- Font
+-- vim.o.guifont = "JetBrainsMono Nerd Font:h18"
+vim.opt.guifont = { "JetBrainsMono Nerd Font", ":h18" }
+
 -- Set highlight on search
 vim.o.hlsearch = false
 
