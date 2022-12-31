@@ -4,6 +4,10 @@
 -- Timeoutlen
 vim.opt.timeoutlen = 500
 
+if vim.g.neovide then
+  vim.cmd(":cd ~")
+end
+
 -- Font
 -- vim.o.guifont = "JetBrainsMono Nerd Font:h18"
 vim.opt.guifont = { "JetBrainsMono Nerd Font", ":h18" }

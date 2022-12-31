@@ -22,8 +22,14 @@ nvim_ts.setup({
     "java",
     "help",
   },
-  highlight = { enable = true },
-  indent = { enable = true, disable = { "python" } },
+  highlight = {
+    enable = true,
+    use_languagetree = true,
+  },
+  indent = {
+    enable = true,
+    disable = { "python" },
+  },
   rainbow = {
     enable = true,
     -- disable = { "jsx", "cpp" }, list of languages you want to disable the plugin for

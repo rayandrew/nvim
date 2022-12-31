@@ -112,6 +112,14 @@ require("packer").startup(function(use)
   })
 
   use("folke/which-key.nvim")
+  use("mg979/vim-visual-multi")
+
+  -- Laravel
+  use("jwalton512/vim-blade")
+
+  use("nathom/filetype.nvim")
+
+  use({ "akinsho/toggleterm.nvim", tag = "*" })
 
   if is_bootstrap then
     require("packer").sync()
