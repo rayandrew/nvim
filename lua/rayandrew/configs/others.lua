@@ -11,3 +11,10 @@ local which_key_status, which_key = pcall(require, "which-key")
 if which_key_status then
   which_key.setup({})
 end
+
+-- Enable colorizer
+local colorizer_status, colorizer = pcall(require, "colorizer")
+
+if colorizer_status then
+  colorizer.setup({})
+end

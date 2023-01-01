@@ -121,6 +121,8 @@ require("packer").startup(function(use)
 
   use({ "akinsho/toggleterm.nvim", tag = "*" })
 
+  use("NvChad/nvim-colorizer.lua")
+
   if is_bootstrap then
     require("packer").sync()
   end

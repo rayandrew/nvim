@@ -8,6 +8,9 @@ if vim.g.neovide then
   vim.cmd(":cd ~")
 end
 
+-- Cursor
+vim.opt.guicursor = ""
+
 -- Font
 -- vim.o.guifont = "JetBrainsMono Nerd Font:h18"
 vim.opt.guifont = { "JetBrainsMono Nerd Font", ":h18" }
@@ -47,6 +50,10 @@ vim.o.completeopt = "menuone,noselect"
 
 -- Clipboard
 vim.opt.clipboard:append("unnamedplus")
+
+-- NetRW
+vim.g.loaded_netrw = 1
+vim.g.loaded_netrwPlugin = 1
 
 -- remove trailing whitespace
 local remove_spaces_group = vim.api.nvim_create_augroup("RemoveSpaces", { clear = true })
