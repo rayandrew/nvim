@@ -81,9 +81,7 @@ null_ls.setup({
     formatting.black,
     formatting.shfmt,
     formatting.rustfmt,
-    formatting.yamlfmt.with({
-      args = { "--indent", "2", "--retain_line_breaks", "true" },
-    }),
+    -- formatting.yamlfmt,
     formatting.clang_format,
     formatting.jq,
   },

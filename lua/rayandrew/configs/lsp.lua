@@ -131,7 +131,7 @@ if mason_status and mason_lspconfig_status then
 end
 
 -- Turn on lsp status information
-pcall(require("fidget").setup)
+-- pcall(require("fidget").setup)
 
 -- nvim-cmp setup
 local cmp_status, cmp = pcall(require, "cmp")
