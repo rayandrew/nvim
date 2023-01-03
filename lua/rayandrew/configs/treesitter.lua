@@ -12,6 +12,7 @@ nvim_ts.setup({
   ensure_installed = {
     "c",
     "cpp",
+    "css",
     "go",
     "lua",
     "python",

@@ -77,6 +77,9 @@ local servers = {
   tailwindcss = {},
   yamlls = {},
 
+  intelephense = {},
+  phpactor = {},
+
   sumneko_lua = {
     Lua = {
       workspace = { checkThirdParty = false },
@@ -86,7 +89,12 @@ local servers = {
 }
 
 -- Setup neovim lua configuration
-pcall(require("neodev").setup)
+local neodev_status, neodev = pcall(require, "neodev")
+
+if neodev_status then
+  neodev.setup({})
+end
+
 --
 -- nvim-cmp supports additional completion capabilities, so broadcast that to servers
 local capabilities = vim.lsp.protocol.make_client_capabilities()
@@ -128,8 +136,9 @@ pcall(require("fidget").setup)
 -- nvim-cmp setup
 local cmp_status, cmp = pcall(require, "cmp")
 local luasnip_status, luasnip = pcall(require, "luasnip")
+local lspkind_status, lspkind = pcall(require, "lspkind")
 
-if cmp_status and luasnip_status then
+if cmp_status and luasnip_status and lspkind_status then
   cmp.setup({
     snippet = {
       expand = function(args)
@@ -166,6 +175,15 @@ if cmp_status and luasnip_status then
     sources = {
       { name = "nvim_lsp" },
       { name = "luasnip" },
+      { name = "copilot" },
+    },
+    formatting = {
+      format = lspkind.cmp_format({
+        mode = "symbol_text",
+        maxwidth = 50,
+        ellipsis_char = "...",
+        symbol_map = { Copilot = "" },
+      }),
     },
   })
 end

@@ -48,7 +48,7 @@ require("packer").startup(function(use)
   use({ -- Highlight, edit, and navigate code
     "nvim-treesitter/nvim-treesitter",
     run = function()
-      pcall(require("nvim-treesitter.install").update({ with_sync = true }))
+      require("nvim-treesitter.install").update({ with_sync = true })
     end,
   })
 
@@ -103,7 +103,35 @@ require("packer").startup(function(use)
     },
   })
 
-  use("Github/copilot.vim")
+  -- use("Github/copilot.vim")
+  use({
+    "zbirenbaum/copilot.lua",
+    event = "VimEnter",
+    config = function()
+      vim.defer_fn(function()
+        require("copilot").setup({
+          suggestion = {
+            keymap = {
+              accept = "<c-g>",
+              accept_word = false,
+              accept_line = false,
+              next = "<c-j>",
+              prev = "<c-k>",
+              dismiss = "<c-f>",
+            },
+            -- auto_trigger = true,
+          },
+        })
+      end, 100)
+    end,
+  })
+  use({
+    "zbirenbaum/copilot-cmp",
+    after = { "copilot.lua" },
+    config = function()
+      require("copilot_cmp").setup()
+    end,
+  })
 
   use({
     "akinsho/bufferline.nvim",
@@ -122,6 +150,8 @@ require("packer").startup(function(use)
   use({ "akinsho/toggleterm.nvim", tag = "*" })
 
   use("NvChad/nvim-colorizer.lua")
+
+  use("onsails/lspkind.nvim")
 
   if is_bootstrap then
     require("packer").sync()
