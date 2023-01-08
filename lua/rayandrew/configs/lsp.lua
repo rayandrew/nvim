@@ -77,8 +77,8 @@ local servers = {
   tailwindcss = {},
   yamlls = {},
 
-  intelephense = {},
-  phpactor = {},
+  -- intelephense = {},
+  -- phpactor = {},
 
   sumneko_lua = {
     Lua = {
