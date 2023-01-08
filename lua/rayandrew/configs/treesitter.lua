@@ -22,6 +22,7 @@ nvim_ts.setup({
     "html",
     "java",
     "help",
+    "nix",
   },
   highlight = {
     enable = true,
