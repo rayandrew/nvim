@@ -8,9 +8,6 @@ if vim.fn.empty(vim.fn.glob(install_path)) > 0 then
 end
 
 local packer = require("packer")
-packer.init({
-  compile_path = require("packer.util").join_paths(vim.fn.stdpath("data"), "plugin", "packer_compiled.lua"),
-})
 
 packer.startup(function(use)
   -- Package manager
@@ -170,7 +167,9 @@ packer.startup(function(use)
   if is_bootstrap then
     require("packer").sync()
   end
-end)
+end, {
+  compile_path = require("packer.util").join_paths(vim.fn.stdpath("data"), "plugin", "packer_compiled.lua"),
+})
 
 -- When we are bootstrapping a configuration, it doesn't
 -- make sense to execute the rest of the init.lua.
