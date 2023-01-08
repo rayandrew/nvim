@@ -170,7 +170,7 @@ packer.startup({
     end
   end,
   config = {
-    compile_path = require("packer.util").join_paths(vim.fn.stdpath("data"), "plugin", "packer_compiled.lua"),
+    compile_path = require("packer.util").join_paths(vim.fn.stdpath("data"), "site", "plugin", "packer_compiled.lua"),
   },
 })
 
