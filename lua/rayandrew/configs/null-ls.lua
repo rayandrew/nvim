@@ -15,6 +15,7 @@ if mason_null_ls_status then
       "pint",
       "clang-format",
       "shfmt",
+      "nixfmt",
     },
   })
 end
@@ -84,6 +85,7 @@ null_ls.setup({
     -- formatting.yamlfmt,
     formatting.clang_format,
     formatting.jq,
+    formatting.nixfmt,
   },
   -- configure format on save
   on_attach = function(current_client, bufnr)
