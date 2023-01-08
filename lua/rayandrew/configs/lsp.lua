@@ -81,7 +81,7 @@ local servers = {
   -- intelephense = {},
   -- phpactor = {},
 
-  ["rnix-lsp"] = {},
+  rnix = {},
 
   sumneko_lua = {
     Lua = {
