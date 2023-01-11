@@ -2,10 +2,12 @@
 
 local tokyonight_status, tokyonight = pcall(require, "tokyonight")
 if tokyonight_status then
-  vim.cmd.colorscheme("tokyonight-night")
   tokyonight.setup({
+    style = "night",
+    light_style = "day",
     transparent = true,
   })
+  vim.cmd.colorscheme("tokyonight")
 end
 
 -- Catppuccin
