@@ -3,6 +3,9 @@
 local tokyonight_status, tokyonight = pcall(require, "tokyonight")
 if tokyonight_status then
   vim.cmd.colorscheme("tokyonight-night")
+  tokyonight.setup({
+    transparent = true,
+  })
 end
 
 -- Catppuccin
