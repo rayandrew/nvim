@@ -167,6 +167,11 @@ packer.startup({
       ft = { "markdown" },
     })
 
+    use({
+      "kylechui/nvim-surround",
+      tag = "*", -- Use for stability; omit to use `main` branch for the latest features
+    })
+
     if is_bootstrap then
       require("packer").sync()
     end
