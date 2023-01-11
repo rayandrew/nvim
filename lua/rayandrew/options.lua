@@ -9,7 +9,7 @@ if vim.g.neovide then
   vim.g.neovide_transparency = 0.0
   local neovide_transparency = 0.95
   vim.g.transparency = neovide_transparency
-  vim.g.neovide_background_color = "#16161e" .. vim.fn.float2nr(255 * neovide_transparency)
+  vim.g.neovide_background_color = "#16161e" .. vim.fn.printf("%x", vim.fn.float2nr(255 * neovide_transparency))
 end
 
 -- Cursor
