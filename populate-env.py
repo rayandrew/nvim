@@ -2,6 +2,7 @@
 
 import os
 from collections import OrderedDict
+import argparse
 
 KEYS = [
     # PATH
@@ -42,11 +43,10 @@ KEYS = [
 ]
 
 
-def main():
+def main(output_path):
     env = os.environ.copy()
     env = OrderedDict(sorted(env.items()))
-    home_directory = os.path.expanduser("~")
-    dst_file = "{}/.config/nvim/lua/rayandrew/env.lua".format(home_directory)
+    dst_file = "{}/env.lua".format(output_path)
     with open(dst_file, "w") as f:
         for key, value in env.items():
             if key in KEYS:
@@ -58,4 +58,15 @@ def main():
 
 
 if __name__ == "__main__":
-    main()
+    home_directory = os.path.expanduser("~")
+    parser = argparse.ArgumentParser("simple_example")
+    parser.add_argument(
+        "-o",
+        "--output",
+        required=False,
+        help="Output Path",
+        type=str,
+        default="{}/.config/nvim/lua/rayandrew".format(home_directory),
+    )
+    args = parser.parse_args()
+    main(args.output)

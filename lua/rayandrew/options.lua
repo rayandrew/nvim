@@ -6,6 +6,9 @@ vim.opt.timeoutlen = 500
 
 if vim.g.neovide then
   vim.cmd(":cd ~")
+  vim.g.neovide_transparency = 0.0
+  vim.g.transparency = 0.95
+  vim.g.neovide_background_color = "#16161e" .. vim.fn.float2nr(255 * vim.g.transparent)
 end
 
 -- Cursor
