@@ -1,48 +1,55 @@
--- Catppuccin
-local catppuccin_status, catppuccin = pcall(require, "catppuccin")
-if catppuccin_status then
-  vim.cmd.colorscheme("catppuccin")
-  catppuccin.setup({
-    flavour = "mocha", -- latte, frappe, macchiato, mocha
-    term_colors = true,
-    transparent_background = true,
-    no_italic = false,
-    no_bold = false,
-    styles = {
-      comments = {},
-      conditionals = {},
-      loops = {},
-      functions = {},
-      keywords = {},
-      strings = {},
-      variables = {},
-      numbers = {},
-      booleans = {},
-      properties = {},
-      types = {},
-    },
-    color_overrides = {
-      mocha = {
-        base = "#000000",
-      },
-    },
-    integrations = {
-      nvimtree = true,
-    },
-    highlight_overrides = {
-      mocha = function(C)
-        return {
-          TabLineSel = { bg = C.pink },
-          NvimTreeNormal = { bg = C.none },
-          CmpBorder = { fg = C.surface2 },
-          Pmenu = { bg = C.none },
-          NormalFloat = { bg = C.none },
-          TelescopeBorder = { link = "FloatBorder" },
-        }
-      end,
-    },
-  })
+-- TokyoNight
+
+local tokyonight_status, tokyonight = pcall(require, "tokyonight")
+if tokyonight_status then
+  vim.cmd.colorscheme("tokyonight-night")
 end
+
+-- Catppuccin
+-- local catppuccin_status, catppuccin = pcall(require, "catppuccin")
+-- if catppuccin_status then
+--   vim.cmd.colorscheme("catppuccin")
+--   catppuccin.setup({
+--     flavour = "mocha", -- latte, frappe, macchiato, mocha
+--     term_colors = true,
+--     transparent_background = true,
+--     no_italic = false,
+--     no_bold = false,
+--     styles = {
+--       comments = {},
+--       conditionals = {},
+--       loops = {},
+--       functions = {},
+--       keywords = {},
+--       strings = {},
+--       variables = {},
+--       numbers = {},
+--       booleans = {},
+--       properties = {},
+--       types = {},
+--     },
+--     color_overrides = {
+--       mocha = {
+--         base = "#000000",
+--       },
+--     },
+--     integrations = {
+--       nvimtree = true,
+--     },
+--     highlight_overrides = {
+--       mocha = function(C)
+--         return {
+--           TabLineSel = { bg = C.pink },
+--           NvimTreeNormal = { bg = C.none },
+--           CmpBorder = { fg = C.surface2 },
+--           Pmenu = { bg = C.none },
+--           NormalFloat = { bg = C.none },
+--           TelescopeBorder = { link = "FloatBorder" },
+--         }
+--       end,
+--     },
+--   })
+-- end
 
 -- Transparent window
 -- local transparent_status, transparent = pcall(require, "transparent")
@@ -73,7 +80,8 @@ if lualine_status then
   lualine.setup({
     options = {
       icons_enabled = false,
-      theme = "catppuccin",
+      -- theme = "catppuccin",
+      theme = "tokyonight",
       component_separators = "|",
       section_separators = "",
     },
@@ -131,7 +139,7 @@ local bufferline_status, bufferline = pcall(require, "bufferline")
 
 if bufferline_status then
   bufferline.setup({
-    highlights = require("catppuccin.groups.integrations.bufferline").get(),
+    -- highlights = require("catppuccin.groups.integrations.bufferline").get(),
     options = {
       offsets = {
         {
