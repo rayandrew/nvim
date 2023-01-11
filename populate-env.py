@@ -59,7 +59,7 @@ def main(output_path):
 
 if __name__ == "__main__":
     home_directory = os.path.expanduser("~")
-    parser = argparse.ArgumentParser("simple_example")
+    parser = argparse.ArgumentParser("Neovim Populate Env")
     parser.add_argument(
         "-o",
         "--output",
