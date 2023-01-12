@@ -175,7 +175,12 @@ packer.startup({
 
     use({
       "nvim-neorg/neorg",
-      run = ":Neorg sync-parsers", -- This is the important bit!
+      run = ":Neorg sync-parsers",
+      ft = "norg",
+      after = {
+        "nvim-treesitter",
+        "telescope",
+      },
     })
 
     if is_bootstrap then
