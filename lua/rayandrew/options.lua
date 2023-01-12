@@ -5,7 +5,7 @@
 vim.opt.timeoutlen = 500
 
 if vim.g.neovide then
-  vim.cmd(":cd ~")
+  vim.cmd(":cd ~/Notes")
   vim.g.neovide_transparency = 0.0
   local neovide_transparency = 0.95
   vim.g.transparency = neovide_transparency
