@@ -175,11 +175,11 @@ packer.startup({
 
     use({
       "nvim-neorg/neorg",
-      run = ":Neorg sync-parsers",
+      -- run = ":Neorg sync-parsers",
       ft = "norg",
       after = {
         "nvim-treesitter",
-        "telescope",
+        -- "nvim-telescope/telescope.nvim",
       },
     })
 
