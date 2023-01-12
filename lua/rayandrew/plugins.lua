@@ -61,7 +61,8 @@ packer.startup({
     })
 
     use({
-      "p00f/nvim-ts-rainbow",
+      -- "p00f/nvim-ts-rainbow", -- original
+      "mrjones2014/nvim-ts-rainbow", -- fork
       after = "nvim-treesitter",
     })
 
@@ -170,6 +171,11 @@ packer.startup({
     use({
       "kylechui/nvim-surround",
       tag = "*", -- Use for stability; omit to use `main` branch for the latest features
+    })
+
+    use({
+      "nvim-neorg/neorg",
+      run = ":Neorg sync-parsers", -- This is the important bit!
     })
 
     if is_bootstrap then
